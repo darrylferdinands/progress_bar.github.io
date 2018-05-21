@@ -1,0 +1,307 @@
+<!DOCTYPE html>				
+<html>
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+	<style>
+		#progress {
+  width: 250px;
+  margin: 20px auto;
+}
+		#progress1 {
+  width: 250px;
+  margin: 20px auto;
+}
+	</style>
+</head>
+<body><br>
+	<div class="container">
+	<div class="row" style="border: 1px solid lightgrey; border-radius: 10px;">
+<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            
+            <div id="dispatchActivities"></div>
+
+        </div>
+
+<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style=" text-align: left; margin-left: -10px;">
+
+<div id="progress"></div>
+
+<div id="progress1"></div>          
+        </div>
+
+</div></div>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://rawgit.com/highcharts/rounded-corners/master/rounded-corners.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+
+Highcharts.chart('dispatchActivities', {
+    chart: {
+        type: 'areaspline'
+    	},
+    title: {
+        text: null,
+    },
+    legend: false,
+    xAxis:{ gridLineWidth: 0,
+		labels: 
+		   {enabled: false, },},
+	
+    yAxis: {gridLineWidth: 0,
+        title: {
+            text: null,
+        },
+		labels: {
+			enabled: false,
+		},
+		min: 0,
+        max: 100,
+        tickInterval: 4,
+    },
+    tooltip: {
+        shared: true,
+        valueSuffix: ' units'
+    },
+    credits: {
+        enabled: false
+    },
+    plotOptions: {
+        areaspline: {
+            fillOpacity: 0.5
+        },
+		
+    },
+	
+    series: [{
+        name: 'This Month Dispatched ',
+        data: [60,20,35,15, 90, 20, 30],
+		marker: {
+            enabled: false
+        		},
+				color: '#98ebd5'
+    			},
+		
+		{
+        name: 'Deliverable Items Dispatched ',
+        data: [25,35,15,11],
+			marker: {
+            enabled: false
+        			},
+		color: '#e7d546'
+    }]
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	var chart = new Highcharts.Chart({
+  title: {
+    text: 'This Month Dispatched',
+    align: 'left',
+    style: {
+    fontSize: 13,
+},
+    margin: 0,
+  },
+  chart: {
+    renderTo: 'progress',
+    type: 'bar',
+    height: 60,
+  },
+  credits: false,
+  tooltip: false,
+  legend: false,
+  navigation: {
+    buttonOptions: {
+      enabled: false
+    }
+  },
+  xAxis: {
+    visible: false,
+  },
+  yAxis: {
+    visible: false,
+    min: 0,
+    max: 100,
+  },
+  series: [{
+    data: [100],
+    grouping: false,
+    animation: false,
+    enableMouseTracking: false,
+    showInLegend: false,
+    color: '#d4f7ed',
+    pointWidth: 25,
+    borderWidth: 0,
+    borderRadiusTopLeft: '4px',
+    borderRadiusTopRight: '4px',
+    borderRadiusBottomLeft: '4px',
+    borderRadiusBottomRight: '4px',
+    dataLabels: {
+      className: 'highlight',
+      format: '',
+      enabled: true,
+      align: 'right',
+      style: {
+        color: 'white',
+        textOutline: false,
+      } 
+    }
+  }, {
+    enableMouseTracking: false,
+    data: [80],
+    borderRadiusBottomLeft: '4px',
+    borderRadiusBottomRight: '4px',
+    color: '#98ebd5',
+    borderWidth: 0,
+    pointWidth: 80,
+    animation: {
+      duration: 1000,
+    },
+    dataLabels: {
+      enabled: true,
+      inside: true,
+      align: 'left',
+      format: '{point.y}%',
+      style: {
+        color: 'white',
+        textOutline: false,
+      }
+    }
+  }]
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	var chart = new Highcharts.Chart({
+  title: { 
+    text: 'Deliverable Items Dispatched',
+    align: 'left',
+    style: {
+    fontSize: 13,
+},
+    margin: 0,
+  },
+  chart: {
+    renderTo: 'progress1',
+    type: 'bar',
+    height: 60,
+  },
+  credits: false,
+  tooltip: false,
+  legend: false,
+  navigation: {
+    buttonOptions: {
+      enabled: false
+    }
+  },
+  xAxis: {
+    visible: false,
+  },
+  yAxis: {
+    visible: false,
+    min: 0,
+    max: 100,
+  },
+  series: [{
+    data: [100],
+    grouping: false,
+    animation: false,
+    enableMouseTracking: false,
+    showInLegend: false,
+    color: '#f9f4d2',
+    pointWidth: 25,
+    borderWidth: 0,
+    borderRadiusTopLeft: '4px',
+    borderRadiusTopRight: '4px',
+    borderRadiusBottomLeft: '4px',
+    borderRadiusBottomRight: '4px',
+    dataLabels: {
+      className: 'highlight',
+      format: '',
+      enabled: true,
+      align: 'right',
+      style: {
+        color: 'white',
+        textOutline: false,
+      }
+    }
+  }, {
+    enableMouseTracking: false,
+    data: [50],
+    borderRadiusBottomLeft: '4px',
+    borderRadiusBottomRight: '4px',
+    color: '#ede078',
+    borderWidth: 0,
+    pointWidth: 50,
+    animation: {
+      duration: 350,
+    },
+    dataLabels: {
+      enabled: true,
+      inside: true,
+      align: 'left',
+      format: '{point.y}%',
+      style: {
+        color: 'white',
+        textOutline: false,
+      }
+    }
+  }]
+});
+</script>
+</body>
+</html>
